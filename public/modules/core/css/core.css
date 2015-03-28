@@ -13,3 +13,31 @@
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+body {
+	background-image: url("../modules/core/img/brand/hackathon.jpg");
+}
+img {
+	height: 100%;
+}
+#header {
+	text-align: center;
+	font-size: 8em;
+	margin-top: 1.5em;
+
+}
+#bord {
+	border-bottom: solid;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	width: 6em;
+}
+.btn {
+	margin-left: 28em;
+	margin-top: 3em;
+
+}
+ #secondHead {
+	margin-left: auto;
+	margin-right: auto;
+}
