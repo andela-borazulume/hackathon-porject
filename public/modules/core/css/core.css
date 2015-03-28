@@ -32,12 +32,12 @@ img {
 	margin-top: 2em;
 	width: 6em;
 }
-.btn {
-	margin-left: 28em;
-	margin-top: 3em;
 
-}
  #secondHead {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.centered {
+	text-align: center;
 }
