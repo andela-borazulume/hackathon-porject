@@ -14,7 +14,8 @@
 	border-color: #78FA89;
 }
 body {
-	background-image: url("../modules/core/img/brand/hackathon.jpg");
+	background: url("http://www.wallshark.com/wallpapers/2013/02/Flower-Keyboard-Phone-Notebook-Apple-Ipad-1600x2560.jpg") no-repeat;
+	background-size: cover;
 }
 img {
 	height: 100%;
@@ -32,12 +33,74 @@ img {
 	margin-top: 2em;
 	width: 6em;
 }
-.btn {
+#topDiv .btn {
 	margin-left: 28em;
 	margin-top: 3em;
 
 }
  #secondHead {
-	margin-left: auto;
+	margin-left: 20em;
 	margin-right: auto;
 }
+
+#catHeader {
+	text-align: center;
+}
+#questionContainer{
+	margin-top: 3em;
+}
+#eachCard{
+	height: 20em;
+	width: 30em;
+}
+#description {
+	opacity: 0;
+	position: absolute;
+	margin: 0 auto;
+	width: 25em;
+	height: 20em;
+	line-height: 2em;
+	/*padding-right: 5em;*/
+	padding-left: 3em;
+	padding-top: 1em;
+}
+#description:hover {
+	opacity: 0.7;
+	background-color: black;
+	color: white;
+	transition: opacity 1s linear;
+  -webkit-transition:opacity 1s linear;
+  -moz-transition:opacity 1s linear2
+}
+#categoryImg {
+	width: 25em;
+	height: 20em;
+  transition:opacity 5s linear;
+  -webkit-transition: opacity 5s linear;
+  -moz-transition: opacity 5s linear;
+}
+
+#categoryImg:hover {
+	opacity: 0.5;
+	-webkit-transition:opacity 2s linear;
+  -moz-transition:opacity 2s linear2
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

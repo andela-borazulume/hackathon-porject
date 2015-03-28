@@ -11,6 +11,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		state('home', {
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html'
+		}).
+		state('category' ,{
+			url: '/category', 
+			templateUrl: 'modules/core/views/category.html'
+		}).
+		state('stageBeginner', {
+			url: '/beginner',
+			template: ''
 		});
 	}
 ]);
