@@ -78,6 +78,10 @@ var UserSchema = new Schema({
 	updated: {
 		type: Date
 	},
+	reputation: {
+		type: String,
+		default: '0'
+	},
 	created: {
 		type: Date,
 		default: Date.now
