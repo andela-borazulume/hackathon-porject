@@ -23,7 +23,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		}).
 		state('stageBeginner', {
 			url: '/beginner',
-			template: ''
+			templateUrl: 'modules/core/views/stageBeginner.html'
 		});
 	}
 ]);

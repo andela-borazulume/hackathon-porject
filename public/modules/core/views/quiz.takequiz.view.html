@@ -1,6 +1,5 @@
 <div class="container-fluid bg-info margin_top_sm" data-ng-controller="quizController">
     <h3 class="text-center" ng-bind="category"></h3>
-
     <div class="modal-dialog"> 
       <div class="modal-content">
          <div class="modal-header">
@@ -20,7 +19,6 @@
                   <div class="blockG" id="rotateG_08"></div>
               </div>
           </div>
-
           <div class="quiz" id="quiz" data-toggle="buttons">        
            <label class="element-animation1 btn btn-lg btn-primary btn-block" ng-class="answera" ng-click="isDisabled || checkAnswer('option1', 'answera')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="1"><span ng-bind="currentQuestion.option1"></span></label>
            <label class="element-animation2 btn btn-lg btn-primary btn-block" ng-class="answerb" ng-click=" || checkAnswer('option2', 'answerb')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="2"><span ng-bind="currentQuestion.option2"></span></label>
@@ -31,8 +29,6 @@
        <button type="button" class="btn btn-primary btn-lg pull-right" ng-click="loadNextQuestion()">
          <span class="glyphicon glyphicon-forward" aria-hidden="true"></span> Next question
        </button><br><br>
-       <!-- <div ng-init="depends = true"><p ng-class="'correctAns': depends">Hello world</p></div> -->
-       
    </div>
    <div class="modal-footer text-muted">
     <span id="answer"></span>
