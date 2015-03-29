@@ -16,29 +16,31 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
               $rootScope.currentCategory = $rootScope.Questions.Photography;
               $rootScope.questionCat = 'Photography';
             }
-            else if (category === 'history') {
+            else if (category === 'music') {
+              $rootScope.currentCategory = $rootScope.Questions.Music;
+              $rootScope.questionCat = 'Music';
+            }
+            else if (category === 'computer') {
               $rootScope.currentCategory = $rootScope.Questions.computerProgramming;
-              $rootScope.questionCat = 'History';              
+              $rootScope.questionCat = 'Computer Programming';              
             }
             else if (category === 'carpentry') {
-              $rootScope.currentCategory = $rootScope.Questions.Swimming;
+              $rootScope.currentCategory = $rootScope.Questions.Carpentry;
               $rootScope.questionCat = 'Carpentry';              
             }
-            else if (category === 'music') {
+            else if (category === 'drawing') {
               $rootScope.currentCategory = $rootScope.Questions.Drawing;
-              $rootScope.questionCat = 'Music';
+              $rootScope.questionCat = 'Drawing';              
+            }
+            else if (category === 'swimming') {
+              $rootScope.currentCategory = $rootScope.Questions.Swimming;
+              $rootScope.questionCat = 'Swimming';              
             }
             $rootScope.currentQuestion = $rootScope.currentCategory[$scope.questionNum];
 
             $location.path('/quiz');
         };
 
-        $scope.loadNextQuestion = function() {
-          if($rootScope.count < 5)
-          $rootScope.count += 1;
-          $rootScope.questionNum = 'question' + $rootScope.count;
-          $rootScope.currentQuestion = $rootScope.currentCategory[$rootScope.questionNum];
-        };
         $rootScope.Questions = {
 
             Photography: {
@@ -83,6 +85,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question5: {
+                    question: 'Do you know:',
                     text: 'A light meter is a device used to measure the amount of light. In photography, a light meter is often used to determine the proper exposure for a photograph. Typically a light meter will include a computer, either digital or analog, which allows the photographer to determine which shutter speed and f-number should be selected for an optimum exposure, given a certain lighting situation and film speed.',
                     resource: 'http://en.wikipedia.org/wiki/Light_meter'
                 },
@@ -107,6 +110,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     resource: 'http://en.wikipedia.org/wiki/Film_speed'
                 },
                 question8: {
+                    question: 'Do you know:',
                     text: 'In photography, exposure value (EV) is a number that represents a combination of a camera shutter speed and f-number, such that all combinations that yield the same exposure have the same EV value. Exposure value is also used to indicate an interval on the photographic exposure scale, with a difference of 1 EV corresponding to a standard power of 2 exposure step, commonly referred to as a stop.',
                     resource: 'http://en.wikipedia.org/wiki/Exposure_value'
                 }
@@ -124,6 +128,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question2: {
+                    question: 'Do you know:',
                     text: 'Computer programming (often shortened to programming) is a process that leads from an original formulation of a computing problem to executable computer programs. Programming involves activities such as analysis, developing understanding, generating algorithms, verification of requirements of algorithms including their correctness and resources consumption, and implementation (commonly referred to as coding[1][2]) of algorithms in a target programming language.',
                     resource: 'http://en.wikipedia.org/wiki/Computer_programming'
                 },
@@ -139,6 +144,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question4: {
+                    question: 'Do you know:',
                     text: 'Programming languages have been classified into several programming language generations. Historically, this classification was used to indicate increasing power of programming styles.',
                     resource: 'http://en.wikipedia.org/wiki/Programming_language_generations'
                 },
@@ -154,6 +160,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question6: {
+                    question: 'Do you know:',
                     text: 'Application software (an application) is a set of one or more programs designed to permit the user to perform a group of coordinated functions, tasks, or activities. Application software cannot run on itself but is dependent on system software to execute. ',
                     resource: 'http://en.wikipedia.org/wiki/Application_software'
                 }
@@ -172,6 +179,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question2: {
+                    question: 'Do you know:',
                     text: 'An expressive image involves the arrangement and rendering of various scene elements according to the photographer’s desire. Achieving the desired image involves image management (placement of the camera, choice of lens, and possibly the use of camera movements) and control of image values.',
                     resource: 'http://en.wikipedia.org/wiki/Zone_System'
                 },
@@ -197,55 +205,9 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question5: {
+                    question: 'Do you know:',
                     text: 'Drawing is a form of visual art that makes use of any number of drawing instruments to mark a two-dimensional medium. Instruments used include graphite pencils, pen and ink, inked brushes, wax color pencils, crayons, charcoal, chalk, pastels, various kinds of erasers, markers, styluses, various metals (such as silverpoint) and electronic drawing.',
                     resource: 'http://en.wikipedia.org/wiki/Drawing'
-                }
-            },
-
-            History: {
-                question1: {
-                    question: 'Cooking food in enough hot fat to cover it halfway',
-                    option1: 'Panfrying',
-                    option2: 'Poaching',
-                    option3: 'Simmering',
-                    option4: 'Steaming',
-                    correctAnswer: 'option2',
-                    resource: 'http://en.wikipedia.org/wiki/Poaching_(cooking)'
-                },
-
-                question2: {
-                    question: 'Cooking food in liquid just below boiling',
-                    option1: 'Panfrying',
-                    option2: 'Simmering',
-                    option3: 'Sauteing',
-                    option4: 'Poaching',
-                    correctAnswer: 'option2',
-                    resource: 'http://en.wikipedia.org/wiki/Simmering'
-                },
-
-                question3: {
-                    text: 'Preparing food for eating, generally requires selection, measurement and combination of ingredients in an ordered procedure so as to achieve desired results. Food preparation includes but is not limited to cooking.',
-                    resource: 'http://en.wikipedia.org/wiki/Outline_of_food_preparation'
-                },
-
-                question4: {
-                    question: 'The manner in which heat energy travels through liquids and gases',
-                    option1: 'Convection',
-                    option2: 'Conduction',
-                    option3: 'Au bain marie',
-                    option4: 'Steaming',
-                    correctAnswer: 'option4',
-                    resource: 'http://en.wikipedia.org/wiki/Steaming'
-                },
-
-                question5: {
-                    question: 'A moist method that cooks food by surrounding it with steam vapor',
-                    optoption1: 'Steaming',
-                    option2: 'Sauteing',
-                    option3: 'Simmering',
-                    option4: 'Poaching',
-                    correctAnswer: 'Poaching',
-                    resource: 'http://en.wikipedia.org/wiki/Poaching_(cooking)'
                 }
             },
 
@@ -261,6 +223,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question2: {
+                    question: 'Do you know:',
                     text: 'Swimming lessons is the process of learning to swim. In most countries there is a definition of a number of swimming levels that is reached in the process of the curriculum. The respective certificates of swimming tests are required for further training in aquatic abilities.',
                     resource: 'http://en.wikipedia.org/wiki/Swimming_lessons'
                 },
@@ -276,6 +239,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question4: {
+                    question: 'Do you know:',
                     text: 'Long-distance swimming is distinguished from ordinary swimming in that the distances involved are longer than are typically swum in pool competitions. When a given swim calls more on endurance than on outright speed, it is the more likely to be considered a long-distance swim. ',
                     resource: 'http://en.wikipedia.org/wiki/Long-distance_swimming'
                 },
@@ -324,17 +288,19 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question4: {
+                    question: 'Do you know:',
                     text: 'Music notation or musical notation is any system used to visually represent aurally perceived music through the use of written symbols, including ancient or modern musical symbols. Types and methods of notation have varied between cultures and throughout history, and much information about ancient music notation is fragmentary.',
                     resource: 'http://en.wikipedia.org/wiki/Musical_notation'
                 },
 
-                question5: {
+                question5: {  
+                    question: 'Do you know:',
                     text: 'Music can be divided into different genres in many different ways. The artistic nature of music means that these classifications are often subjective and controversial, and some genres may overlap. There are even varying academic definitions of the term genre itself. In his book Form in Tonal Music, Douglass M. Green distinguishes between genre and form. ',
                     resource: 'http://en.wikipedia.org/wiki/Music_genre'
                 }
             },
 
-            Carpenter: {
+            Carpentry: {
                 question1: {
                     question: 'If fixing 12mm plasterboards to a timber stud the most suitable fixing to use is:',
                     option1: '50mm Ovals',
@@ -367,11 +333,13 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 },
 
                 question4: {
+                    question: 'Do you know:',
                     text: 'Woodworking, veneer refers to thin slices of wood, usually thinner than 3 mm (1/8 inch), that typically are glued onto core panels (typically, wood, particle board or medium-density fiberboard) to produce flat panels such as doors, tops and panels for cabinets, parquet floors and parts of furniture.',
                     resource: 'http://en.wikipedia.org/wiki/Wood_veneer'
                 },
 
                 question5: {
+                    question: 'Do you know:',
                     text: 'Carpentry is a skilled trade in which the primary work performed is the cutting, shaping and installation of building materials during the construction of buildings, ships, timber bridges, concrete formwork, etc. Carpenters traditionally worked with natural wood and did the rougher work such as framing, but today many other materials are also used[1] and sometimes the finer trades of cabinetmaking and furniture building are considered carpentry.',
                     resource: 'http://en.wikipedia.org/wiki/Carpentry'
                 }

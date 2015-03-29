@@ -4,7 +4,7 @@
       <div class="modal-content">
          <div class="modal-header">
             <h4><span class="label label-warning" id="qid" ng-bind="count"></span> 
-           <span ng-bind="currentQuestion.question || currentQuestion.text"></span></h4>
+           <span ng-bind="currentQuestion.question"></span></h4>
         </div>
         <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">
@@ -19,11 +19,15 @@
                   <div class="blockG" id="rotateG_08"></div>
               </div>
           </div>
-          <div class="quiz" id="quiz" data-toggle="buttons">        
-           <label class="element-animation1 btn btn-lg btn-primary btn-block" ng-class="answera" ng-click="isDisabled || checkAnswer('option1', 'answera')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="1"><span ng-bind="currentQuestion.option1"></span></label>
-           <label class="element-animation2 btn btn-lg btn-primary btn-block" ng-class="answerb" ng-click=" || checkAnswer('option2', 'answerb')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="2"><span ng-bind="currentQuestion.option2"></span></label>
-           <label class="element-animation3 btn btn-lg btn-primary btn-block" ng-class="answerc" ng-click=" isDisabled || checkAnswer('option3', 'answerc')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="3"><span ng-bind="currentQuestion.option3"></span></label>
-           <label class="element-animation4 btn btn-lg btn-primary btn-block" ng-class="answerd" ng-click=" isDisabled || checkAnswer('option4', 'answerd')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="4"><span ng-bind="currentQuestion.option4"></span></label>
+          <div class="quiz" id="quiz" data-toggle="buttons">
+
+           <label class="element-animation1 btn btn-lg btn-primary btn-block" ng-class="answera" ng-click="isDisabled || checkAnswer('option1', 'answera')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="1"><span ng-bind="currentQuestion.option1  || currentQuestion.text"></span></label>
+
+           <label ng-hide="noQuestion" class="element-animation2 btn btn-lg btn-primary btn-block" ng-class="answerb" ng-click=" isDisabled|| checkAnswer('option2', 'answerb')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="2"><span ng-bind="currentQuestion.option2" ></span></label>
+
+           <label ng-hide="noQuestion" class="element-animation3 btn btn-lg btn-primary btn-block" ng-class="answerc" ng-click=" isDisabled || checkAnswer('option3', 'answerc')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="3"><span ng-bind="currentQuestion.option3" ></span></label>
+
+           <label ng-hide="noQuestion" class="element-animation4 btn btn-lg btn-primary btn-block" ng-class="answerd" ng-click=" isDisabled || checkAnswer('option4', 'answerd')"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" ng-disabled="isDisabled"></i></span> <input type="radio" name="q_answer" value="4"><span ng-bind="currentQuestion.option4" ></span></label>
        </div>
        <br>
        <button type="button" class="btn btn-primary btn-lg pull-right" ng-click="loadNextQuestion()">
