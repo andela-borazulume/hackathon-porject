@@ -24,7 +24,7 @@ img {
 	text-align: center;
 	font-size: 8em;
 	margin-top: 1.5em;
-
+    color: #f8f8ff;
 }
 #bord {
 	border-bottom: solid;
@@ -41,6 +41,7 @@ img {
  #secondHead {
 	margin-left: 20em;
 	margin-right: auto;
+	 color: #f8f8ff;
 }
 
 .centered {
@@ -97,4 +98,12 @@ img {
 	color: #f8f8ff;
 }
 
+#headerNav {
+	background-color: #f8f8ff;
+	width: 100%;
+}
+
+#nav-text {
+	color: darkred;
+}
 
