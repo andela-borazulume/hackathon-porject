@@ -1,19 +1,47 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$location',
-    function ($scope, Authentication, $location) {
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$location', '$rootScope',
+    function ($scope, Authentication, $location, $rootScope) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
         $scope.redirectToCategorypage = function () {
             $location.path('/category');
-        };
+        }; 
+
+        $rootScope.count = 1;
+        $rootScope.questionNum = 'question' + $rootScope.count;
 
         $scope.redirectToQuizpage = function (category) {
+            if (category === 'photo') {
+              $rootScope.currentCategory = $rootScope.Questions.Photography;
+              $rootScope.questionCat = 'Photography';
+            }
+            else if (category === 'history') {
+              $rootScope.currentCategory = $rootScope.Questions.computerProgramming;
+              $rootScope.questionCat = 'History';              
+            }
+            else if (category === 'carpentry') {
+              $rootScope.currentCategory = $rootScope.Questions.Swimming;
+              $rootScope.questionCat = 'Carpentry';              
+            }
+            else if (category === 'music') {
+              $rootScope.currentCategory = $rootScope.Questions.Drawing;
+              $rootScope.questionCat = 'Music';
+            }
+            $rootScope.currentQuestion = $rootScope.currentCategory[$scope.questionNum];
+
             $location.path('/quiz');
         };
 
-        $scope.Questions = {
+        $scope.loadNextQuestion = function() {
+          if($rootScope.count < 5)
+          $rootScope.count += 1;
+          $rootScope.questionNum = 'question' + $rootScope.count;
+          $rootScope.currentQuestion = $rootScope.currentCategory[$rootScope.questionNum];
+        };
+
+        $rootScope.Questions = {
 
             Photography: {
                 question1: {

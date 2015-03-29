@@ -1,9 +1,11 @@
-<div class="container-fluid bg-info margin_top_md" ng-controller="HomeController">
-    <div class="modal-dialog">
+<div class="container-fluid bg-info margin_top_sm" ng-controller="HomeController">
+    <h3 class="text-center" ng-bind="questionCat"></h3>
+
+    <div class="modal-dialog"> 
       <div class="modal-content">
          <div class="modal-header">
             <h4><span class="label label-warning" id="qid">1</span> 
-           What is the answer to life, the world and everything?</h4>
+           <span ng-bind="currentQuestion.question"></span></h4>
         </div>
         <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">
@@ -20,11 +22,15 @@
           </div>
 
           <div class="quiz" id="quiz" data-toggle="buttons">
-           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">God</label>
-           <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Death</label>
-           <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">42</label>
-           <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Space</label>
+           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"><span ng-bind="currentQuestion.option1"></span></label>
+           <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"><span ng-bind="currentQuestion.option2"></span></label>
+           <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3"><span ng-bind="currentQuestion.option3"></span></label>
+           <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4"><span ng-bind="currentQuestion.option4"></span></label>
        </div>
+       <br>
+       <button type="button" class="btn btn-primary btn-lg pull-right" ng-click="loadNextQuestion()">
+         <span class="glyphicon glyphicon-forward" aria-hidden="true"></span> Next question
+       </button><br><br>
    </div>
    <div class="modal-footer text-muted">
     <span id="answer"></span>
