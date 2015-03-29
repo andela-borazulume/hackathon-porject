@@ -38,14 +38,18 @@ img {
 	width: 6em;
 }
 
-#topDiv .btn {
-	margin-left: 28em;
-	margin-top: 3em;
+.wrongAns {
+	background: #d9534f;
 }
+
+.correctAns {
+	background: #5cb85c;
+	transition-duration: 0;
+}
+
  #secondHead {
-	margin-left: 20em;
-	margin-right: auto;
 	 color: #f8f8ff;
+	 transition-duration: 0;
 }
 
 .centered {

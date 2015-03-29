@@ -9,38 +9,11 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             $location.path('/category');
         }; 
 
-        $rootScope.count = 1;
-        $rootScope.questionNum = 'question' + $rootScope.count;
-
-        $scope.redirectToQuizpage = function (category) {
-            if (category === 'photo') {
-              $rootScope.currentCategory = $rootScope.Questions.Photography;
-              $rootScope.questionCat = 'Photography';
-            }
-            else if (category === 'history') {
-              $rootScope.currentCategory = $rootScope.Questions.computerProgramming;
-              $rootScope.questionCat = 'History';              
-            }
-            else if (category === 'carpentry') {
-              $rootScope.currentCategory = $rootScope.Questions.Swimming;
-              $rootScope.questionCat = 'Carpentry';              
-            }
-            else if (category === 'music') {
-              $rootScope.currentCategory = $rootScope.Questions.Drawing;
-              $rootScope.questionCat = 'Music';
-            }
-            $rootScope.currentQuestion = $rootScope.currentCategory[$scope.questionNum];
-
+        $scope.redirectToQuizpage = function (category) {           
+            $rootScope.currentCategory = category; 
             $location.path('/quiz');
         };
-
-        $scope.loadNextQuestion = function() {
-          if($rootScope.count < 5)
-          $rootScope.count += 1;
-          $rootScope.questionNum = 'question' + $rootScope.count;
-          $rootScope.currentQuestion = $rootScope.currentCategory[$rootScope.questionNum];
-        };
-
+        
         $rootScope.Questions = {
 
             Photography: {
@@ -50,7 +23,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Shutter Speed',
                     option3: 'Contrast',
                     option4: 'Sharpness',
-                    correctAnswer: 'Exposure',
+                    correctAnswer: 'option1',
                     resource: 'yidi yada'
                 },
 
@@ -60,7 +33,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Aperture',
                     option3: 'Film speed',
                     option4: 'Exposure',
-                    correctAnswer: 'Aperture',
+                    correctAnswer: 'option2',
                     resource: 'yidi yada'
                 },
 
@@ -70,7 +43,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Film speed + aperture + exposure',
                     option3: 'Exposure + aperture + shutter speed',
                     option4: 'Aperture + shutter speed + film speed',
-                    correctAnswer: 'Aperture + shutter speed + film speed',
+                    correctAnswer: 'option4',
                     resource: 'yidi yada'
                 },
 
@@ -80,7 +53,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Shutter Speed',
                     option3: 'Candelabras',
                     option4: 'Stops',
-                    //correctAnswer: option3,
+                    correctAnswer: 'option3',
                     resource: 'yidi yada'
                 },
 
@@ -90,7 +63,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Stops',
                     option3: 'F Numbers',
                     option4: 'Fractions',
-                    //correctAnswer: option3,
+                    correctAnswer: 'option3',
                     resource: 'yidi yada'
                 },
 
@@ -100,7 +73,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'F Numbers',
                     option3: 'Seconds',
                     option4: 'Exposures',
-                    //correctAnswer: option2,
+                    correctAnswer: 'option2',
                     resource: 'yidi yada'
                 },
 
@@ -110,7 +83,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: '1/200',
                     option3: '1/50',
                     option4: '1/500',
-                    //correctAnswer: option3,
+                    correctAnswer: 'option3',
                     resource: 'yidi yada'
                 },
 
@@ -120,19 +93,19 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Manual ',
                     option3: 'Aperture',
                     option4: 'Macro',
-                    //correctAnswer: option3,
+                    correctAnswer: 'option3',
                     resource: 'yidi yada'
                 }
             },
 
-            computerProgramming: {
+            Carpentry: {
                 question1: {
                     question: 'If you needed to execute some code repeatedly based on a certain condition, which of the following would you use?',
                     option1: 'Variable',
                     option2: 'Loop',
                     option3: 'Compiler',
                     option4: 'Conditional',
-                    //correctAnswer: option2,
+                    correctAnswer: 'option2',
                     resource: 'yidi yada'
                 },
 
@@ -142,7 +115,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'false',
                     option3: 'Not sure',
                     option4: 'Depends',
-                    //correctAnswer: option2,
+                    correctAnswer: 'option2',
                     resource: 'yidi yada'
                 },
 
@@ -152,7 +125,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Transliterator',
                     option3: 'Converter',
                     option4: 'Translator',
-                    //correctAnswer: option1,
+                    correctAnswer: 'option1',
                     resource: 'Specifically, a compiler is used to turn source code into object code which is then passed through a program called a linker which turns it into an executable program.'
                 },
 
@@ -162,7 +135,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: '2nd generation',
                     option3: '5th generation',
                     option4: '3rd generation',
-                    //correctAnswer: option4,
+                    correctAnswer: 'option4',
                     resource: 'yidi yada'
                 },
 
@@ -172,7 +145,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'PHP',
                     option3: 'A class',
                     option4: 'A compiler',
-                    //correctAnswer: option1,
+                    correctAnswer: 'option1',
                     resource: 'yidi yada'
                 },
 
@@ -182,20 +155,20 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'False',
                     option3: 'Not sure',
                     option4: 'Depends',
-                    //correctAnswer: option2,
+                    correctAnswer: 'option2',
                     resource: 'yidi yada'
                 }
             },
 
 
-            Drawing: {
+            Music: {
                 question1: {
                     question: 'A drawing is started with',
                     option1: 'All simple shapes laid out in composition.',
                     option2: 'The colors being mixed and ready for application.',
                     option3: 'All the important details',
                     option4: 'The separation between lights and darks.',
-                    //correctAnswer: option2,
+                    correctAnswer: 'option2',
                     resource: 'yidi yada'
                 },
 
@@ -205,7 +178,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'A moment of thoughtfulness.',
                     option3: 'The lightest part of a drawing',
                     option4: 'The area which has all the values and tones.',
-                    //correctAnswer: option4,
+                    correctAnswer: 'option4',
                     resource: 'yidi yada'
                 },
 
@@ -215,7 +188,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Clear objects from the depth of field',
                     option3: 'View all the colors of an object',
                     option4: 'Simplify the shapes being drawn',
-                    //correctAnswer: option1,
+                    correctAnswer: 'option1',
                     resource: 'Specifically, an artist squints his eyes to drain it of dirts.. This is propbably the dumbest answer ever'
                 },
 
@@ -225,7 +198,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Planning everything in tissue form',
                     option3: 'Using a series of gray values and textures',
                     option4: 'Using dingbats to represent the values',
-                    //correctAnswer: option43,
+                    correctAnswer: 'option4',
                     resource: 'yidi yada'
                 },
 
@@ -235,19 +208,19 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'With a definite direction.',
                     option3: 'In negative form.',
                     option4: 'All of the above',
-                    //correctAnswer: option4,
+                    correctAnswer: 'option4',
                     resource: 'yidi yada'
                 }
             },
 
-            Cooking: {
+            History: {
                 question1: {
                     question: 'Cooking food in enough hot fat to cover it halfway',
                     option1: 'Panfrying',
                     option2: 'Poaching',
                     option3: 'Simmering',
                     option4: 'Steaming',
-                    //correctAnswer: option2,
+                    correctAnswer: 'option2',
                     resource: 'yidi yada'
                 },
 
@@ -257,7 +230,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Simmering',
                     option3: 'Sauteing',
                     option4: 'Poaching',
-                    //correctAnswer: option4,
+                    correctAnswer: 'option4',
                     resource: 'yidi yada'
                 },
 
@@ -267,7 +240,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     option2: 'Steaming',
                     option3: 'Sauteing',
                     option4: 'Poaching',
-                    //correctAnswer: option1,
+                    correctAnswer: 'option1',
                     resource: ' '
                 },
 
