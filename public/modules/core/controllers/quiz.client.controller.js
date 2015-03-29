@@ -22,7 +22,10 @@ angular.module('core').controller('quizController', ['$scope', '$rootScope', '$l
       if($scope.count < 5) {
         $scope.count += 1;
         $scope.isDisabled =false;
-        $scope.answera = '', $scope.answerb = '', $scope.answerc = '', $scope.answerd = '';
+        $scope.answera = '';
+          $scope.answerb = '';
+          $scope.answerc = '';
+          $scope.answerd = '';
         $scope.questionNum = 'question' + $scope.count;
         $scope.currentQuestion = $scope.currentCat[$scope.questionNum];
         $scope.currentAnswer = $scope.currentQuestion.correctAnswer;
