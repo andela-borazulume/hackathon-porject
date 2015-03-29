@@ -34,9 +34,12 @@
          <span class="glyphicon glyphicon-forward" aria-hidden="true"></span> Next question
        </button><br><br>
    </div>
-   <div class="modal-footer text-muted">
-    <span id="answer"></span>
-</div>
+   <div class="modal-footer text-muted pull-left">
+    <div ng-show="wrongAns">
+      <h4>The correct answer is: <span ng-bind="correctAnswer"></span></h4><br>
+      <h5>Read more about this at: <a href="{{studyLink}}" ng-bind="studyLink" target=""></a></h5>
+    </div>
+  </div>
 </div>
 </div>
 </div>
