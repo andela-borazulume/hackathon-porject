@@ -5,8 +5,12 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	function($scope, Authentication, $location) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
-    $scope.redirectToQuizpage = function() {
-      $location.path('/quiz');
+    $scope.redirectToCategorypage = function() {
+      $location.path('/category');
     };
+
+        $scope.redirectToQuizpage = function() {
+            $location.path('/quiz');
+        };
 	}
 ]);
