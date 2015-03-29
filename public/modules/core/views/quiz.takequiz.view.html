@@ -4,8 +4,8 @@
     <div class="modal-dialog"> 
       <div class="modal-content">
          <div class="modal-header">
-            <h4><span class="label label-warning" id="qid">1</span> 
-           <span ng-bind="currentQuestion.question"></span></h4>
+            <h4><span class="label label-warning" id="qid" ng-bind="count"></span> 
+           <span ng-bind="currentQuestion.question || currentQuestion.text"></span></h4>
         </div>
         <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">

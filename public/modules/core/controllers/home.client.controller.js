@@ -285,7 +285,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
                 question5: {
                     question: 'Which swimming stroke burns the most calories?',
-                    optoption1: 'Front stroke and back stroke',
+                    option1: 'Front stroke and back stroke',
                     option2: 'Butterfly and breast stroke',
                     option3: 'Freestyle stroke',
                     option4: 'Back stroke',

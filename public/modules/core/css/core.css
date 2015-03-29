@@ -17,11 +17,9 @@ body {
 	background: url("http://www.wallshark.com/wallpapers/2013/02/Flower-Keyboard-Phone-Notebook-Apple-Ipad-1600x2560.jpg") no-repeat;
 	background-size: cover;
 }
-/*.overlay {
-	background: #000;
-	opacity: .5;
-	min-height: 768px;
-}*/
+.margin_buttom_lg {
+	margin-bottom: 120px;
+}
 
 img {
 	height: 100%;
@@ -99,6 +97,7 @@ img {
 }
 
 #categoryName {
+	text-align: center;
 	width: 100%;
 	background-color:#5a5a5a;
 	color: #f8f8ff;
