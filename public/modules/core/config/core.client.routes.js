@@ -16,6 +16,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		.state('quiz', {
 			url: '/quiz',
 			templateUrl: 'modules/core/views/quiz.takequiz.view.html'
+		}).
+		state('category' ,{
+			url: '/category', 
+			templateUrl: 'modules/core/views/category.html'
+		}).
+		state('stageBeginner', {
+			url: '/beginner',
+			template: ''
 		});
 	}
 ]);
