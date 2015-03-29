@@ -80,7 +80,7 @@ var UserSchema = new Schema({
 	},
 	reputation: {
 		type: String,
-		default: '0'
+		default: '1'
 	},
 	created: {
 		type: Date,
