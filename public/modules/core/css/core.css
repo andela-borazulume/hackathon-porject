@@ -136,6 +136,7 @@ img {
 	font-weight: bold;
 	font-family: 'Lato', sans-serif;
 	color: #56bc39;
+	padding: 10px 12px;
 }
 .home-button a:hover {
 	background-color: black;
